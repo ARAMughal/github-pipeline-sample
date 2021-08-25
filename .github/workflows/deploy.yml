@@ -42,6 +42,7 @@ jobs:
           
       - name: Push changes to server
         run: |
+          cd /home/aram/github-pipeline-sample
           git reset --hard
           git pull origin master
 
