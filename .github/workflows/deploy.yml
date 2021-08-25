@@ -43,7 +43,7 @@ jobs:
       - name: Push changes to server
         run: |
           git reset --hard
-          git pull -u origin master
+          git pull origin master
 
   #    - name: Deploy
   #      run: |
