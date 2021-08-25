@@ -40,14 +40,14 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
-      - name: Push changes to server
-        run: |
-          cd /var/www/github-pipeline-sample
-          git reset --hard
-          git pull origin master
-
-  #    - name: Deploy
+ #     - name: Push changes to server
   #      run: |
-  #        TEMP=$(mktemp)
-  #        echo "${{ secrets.SSH_KEY }}" > $TEMP
-  #        ssh -o 'StrictHostKeyChecking no' -i $TEMP  aram@143.198.131.117 "cd /home/aram/github-pipeline-sample;git reset --hard;git pull origin  main;"
+   #       cd /var/www/github-pipeline-sample
+    #      git reset --hard
+     #     git pull origin master
+
+      - name: Deploy
+        run: |
+          TEMP=$(mktemp)
+          echo "${{ secrets.SSH_KEY }}" > $TEMP
+          ssh -o 'StrictHostKeyChecking no' -i $TEMP  aram@143.198.131.117 "cd /home/aram/github-pipeline-sample;git reset --hard;git pull origin  master;"
